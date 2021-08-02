@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>阿爾罕布拉宮 mini map</title>
+    <script src="https://unpkg.com/d3@5.6.0/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.js"></script>
+    <script src="index.js" defer></script>
+  </head>
+  <style>
+    body { /* reset */
+      margin:0;
+      position:fixed;
+      top:0;
+      right:0;
+      bottom:0;
+      left:0;
+    }
+    .vis {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      width: 100vw;
+    }
+    .vis > div {
+      margin: 1em;
+    }
+    #main {
+      flex: 4 0 0;
+    }
+    #mini {
+      flex: 1 0 0;
+    }
+    #main > svg {
+        /* Occupy the full viewport */
+        width: 100%;
+        height: 100%;
+
+        /* don't scale the stroke-width of the magnified object.*/
+        vector-effect: non-scaling-stroke;
+    }
+  </style>
+  <body>
+<body>
+  <div class="vis">
+    <div id="mini">
+      <svg viewBox="0 0 3200 2000">
+        <use xlink:href="#largemap">
+      </svg>
+    </div>
+    <div id="main">
+      <svg class="aperture" width="3200" height="2000" viewBox="0 0 3200 2000" preserveAspectRatio="none">
+      <!-- 這邊會加阿爾罕布拉宮id="largemap" -->
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
